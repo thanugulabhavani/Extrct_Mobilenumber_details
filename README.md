@@ -9,9 +9,11 @@ pip install phonenumbers
 
 Usage:
 1.Clone the repository to your local machine:
-git clone https://github.com/your-username/mobile-number-tracker.git
-cd mobile-number-tracker
+
+git clone https://github.com/your-username/mobile-number-tracker.git cd mobile-number-tracker
+
 2.Run the script:
+
 python mobile_number_tracker.py
 
 Acknowledgments:
