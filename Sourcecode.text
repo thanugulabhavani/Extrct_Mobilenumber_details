@@ -1,0 +1,32 @@
+import phonenumbers
+
+def track_mobile_number(phone_number):
+    try:
+        # Parse the phone number
+        parsed_number = phonenumbers.parse(phone_number, None)
+
+        # Check if the number is valid
+        if not phonenumbers.is_valid_number(parsed_number):
+            print("Invalid phone number.")
+            return
+
+        # Get the region information (e.g., country)
+        region_info = phonenumbers.region_code_for_number(parsed_number)
+        print("Region: ", region_info)
+
+        # Get the carrier information
+        carrier_info = phonenumbers.carrier.name_for_number(parsed_number, "en")
+        print("Carrier: ", carrier_info)
+
+        # Note: Retrieving the name associated with the number typically requires external services
+        # and might not be freely available.
+
+    except phonenumbers.NumberParseException as e:
+        print("Error: ", e)
+
+if __name__ == "__main__":
+    print("Welcome to the Mobile Number Tracker!")
+    print("Please enter a phone number in international format (e.g., +1234567890).")
+    user_input = input("Phone Number: ")
+
+    track_mobile_number(user_input)
